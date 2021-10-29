@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Recipe from './components/recipe';
+import recipes from './data';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>Hello World</p>
+      <h1>Coles Concoctions</h1>
+      {recipes.map(recipe => 
+        <Recipe 
+          name={recipe.name}
+          img={recipe.imageSrc}
+          desc={recipe.description}
+        />
+      )};
     </div>
   );
 }
